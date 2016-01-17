@@ -2,7 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.base_mac = "{{ .BaseMacAddress }}"
   config.vagrant.host = :detect
   config.vm.boot_timeout = 80
   config.vm.graceful_halt_timeout = 40
