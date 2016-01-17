@@ -36,7 +36,7 @@
    {
       "type": "file",
       "source": "vcore/files/virtualbox/vbox-ga.tar.gz",
-      "only": ["virtualbox"],
+      "only": ["virtualbox-iso"],
       "destination": "/home/tc/vbox-ga.tar.gz"
    },
    {
@@ -54,7 +54,7 @@
         "vcore/scripts/cleanupfsync.sh"
       ],
       "override": {
-        "virtualbox": {
+        "virtualbox-iso": {
           "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'"
         }
       }
@@ -62,7 +62,7 @@
   ],
   "builders": [
     {
-      "type": "virtualbox",
+      "type": "virtualbox-iso",
       "boot_command": [
         "<wait><esc><wait>core<enter><wait>",
         "<wait><wait><wait><wait><wait><wait>",
@@ -172,7 +172,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "only": ["virtualbox"],
+      "only": ["virtualbox-iso"],
       "vagrantfile_template": "vcore/templates/Vagrantfile",
       "compression_level": 9,
       "keep_input_artifact": true,
